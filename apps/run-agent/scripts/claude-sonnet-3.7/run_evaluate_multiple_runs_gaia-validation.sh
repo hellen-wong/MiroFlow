@@ -8,6 +8,9 @@ NUM_RUNS=3
 BENCHMARK_NAME="gaia-validation"
 LLM_PROVIDER="claude_openrouter"
 LLM_MODEL="anthropic/claude-3.7-sonnet"
+# LLM_PROVIDER="anthropic"
+# LLM_MODEL="claude-3-7-sonnet-20250219"
+
 AGENT_SET="miroflow"
 
 RESULTS_DIR="logs/${BENCHMARK_NAME}/${LLM_PROVIDER}_${LLM_MODEL}_${AGENT_SET}"
@@ -27,7 +30,7 @@ for i in $(seq 1 $NUM_RUNS); do
     (
         uv run main.py common-benchmark \
             benchmark=$BENCHMARK_NAME \
-            llm=claude_openrouter \
+            llm=claude \
             llm.provider=$LLM_PROVIDER \
             llm.model_name=$LLM_MODEL \
             llm.async_client=true \

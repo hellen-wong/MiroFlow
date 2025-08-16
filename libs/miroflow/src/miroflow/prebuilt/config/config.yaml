@@ -1,6 +1,7 @@
 # conf/config.yaml
 defaults:
   - llm: claude_openrouter
+  # - llm: claude
   - agent: miroflow
   - benchmark: gaia-validation
   - pricing: _default

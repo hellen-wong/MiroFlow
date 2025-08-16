@@ -1,6 +1,7 @@
 import dotenv
 import fire
 import hydra
+import os
 from miroflow.logging.logger import bootstrap_logger
 from miroflow.prebuilt.config import config_name, config_path, debug_config
 from rich.traceback import install
@@ -22,6 +23,7 @@ def print_config(*args):
 
 if __name__ == "__main__":
     install(suppress=[fire, hydra], show_locals=True)
+    
     fire.Fire(
         {
             "print-config": print_config,

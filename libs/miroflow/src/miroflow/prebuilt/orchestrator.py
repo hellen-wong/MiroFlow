@@ -1044,7 +1044,7 @@ Your objective is maximum completeness, transparency, and detailed documentation
             date=datetime.datetime.today(),
             mcp_servers=tool_definitions,
         ) + generate_agent_specific_system_prompt(agent_type="main")
-
+        
         # 4. 主循环：LLM <-> Tools
         max_turns = self.cfg.agent.main_agent.max_turns
         if max_turns < 0:
